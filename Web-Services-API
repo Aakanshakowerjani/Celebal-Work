@@ -1,0 +1,94 @@
+API--APPLICATION PROGRAMMING INTERFACE
+
+What is Web Service?
+
+-service available over the web
+-enabls communication between application over the web
+-provide a std protocol/format for communication
+
+
+Why we use it?
+
+-platform independent communication
+-using web services two diff applications (implementation)can talk to each other and exchange info.
+
+
+Types of Web Services?
+
+-SOAP(simple object access protocol)
+--It is set of protocol/rules/definations that how two applications will talk to each other over the web
+--structure of soap message:-
+---envelop
+---header
+---body
+--medium:HTTP(POST)
+--format:XML
+
+-REST(representation state transfer)
+--medium:HTTP(POST,GET,PUT,DELETE...)
+--format:XML/JSON/TEXT...
+
+
+What is WSDL?
+
+Service provider publishes an interface for his web services that describes all attributes of the web services.
+This is XML based interface and is called -WEB SERVICES DESCRIPTION LANGUAGE(WSDL)
+(e.g. online wsdl)
+
+
+What is UDDI?
+
+A web service provider publishes his web service (through wsdl) on an online directory from where consumers can query and search the web services. 
+This online registry / directory is called- UNIVERSAL DESCRIPTION DISCOVERY AND INTEGRATION(UDDI)
+Is an XML based std for publishing and finding web sevices.
+
+
+What are SOAP Web services?
+
+A web service that compiles to the SOAP web services specifications is a SOAP web service.
+W3 defines and didicates this stds.
+SOAP WEB SERVICES SPECIFICATIONS
+-BASIC
+--SOAP 
+--WSDL
+--UDDI
+-EXTENDED
+--WS-SECURITY
+--WS-POLICY
+--WS-I
+
+
+What are RESTful web services?
+--it is an architectural style
+--it define set of principles to be followed while designning a service for communication/data exchange between 2 applications
+--when these principles are applied while designing web services (for client - server interaction) we get RESTful web services.
+--principles to guide how the data/info (state) of a resource is transferred using representation.
+--developed by-ROY FIELDING-2000
+
+what are the principles /constraints of restfull architectur:
+* Uniform interface 
+--Resource: everything is a resource
+--URI: any resources/data can be accesed by a URI(uniform resource identifier)
+--HTTP: make explicit use of HTTP methods
+		--POST C-CREATE
+		--GET  R-READ
+		--PUT  U-PUT
+		--DELETE D-DELETE
+* stateless
+--all client server communication are stateless
+--each request from the client to the server must contain all of the data that is necessary to handle the request
+--no need of storing any state on the server
+eg. everytime currnt state of a cart should be sent to server
+* Cacheable
+--happens at cient side
+--the response send by the server not only contain the data butalso some meta data which shows whether to store  response locally or not
+* Layered System
+--layers can exist between client and server
+--there are many layers between client and server
+--these are http intermediaries
+--can be used for mesaage translation/improving performance with caching 
+--can include proxies and gateway
+--there is also caching layer inbetween eg. if a request come from a client within an hour and there is no change in resource then the same response can again send to client without going to server
+--this improves scaliblity
+* Code On Demand(optional)
+--ability to download and execute code on client side
