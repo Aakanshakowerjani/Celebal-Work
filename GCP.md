@@ -31,3 +31,44 @@ cloud functions:
 
 Note:
 ** Docker:allows you to have a well sealed containers , these containers are secure , portable , also allow have social containers .
+
+
+
+
+
+uploading files from local to GCP bucket using python scripts:
+
+try
+	import io
+	from io import BytesIO
+	import pandas as pd
+	from google.cloud import storage
+except Exception as e:
+	print("Some Modules are missing {}".formulate(e))
+
+storage_client=storage.Client.from_service_account_json("file name.json")
+
+#crete a bucket object
+
+bucket=storage_client.get_bucket("bucket name")
+
+filename="%s/%s" %('',"image name")
+blob=bucket.blob(filename)
+
+with open('myimage.png','rb') as f:
+	blob.upload_from_file(f)
+print("upload complete")
+
+
+cloud sdk:
+gsutil cp -r path of image/file/folder gs://bucket_name
+
+list of bucket:
+gsutil ls gs://bucket_name
+
+create a bucket:
+gsutil mb -c regional -l us-central1 gs://new_bucket_name
+					  -l asia-south1
+
+giving public access to bucket:
+gsutil ac1 ch -u AllUsers:R gs://new_bucket_name

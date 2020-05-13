@@ -1,0 +1,10 @@
+Code Coverage:
+
+1. It is a software testing metric that determines the number of lines of code that is successfully validated under a test procedure , which in turn , helps in analyzing how comprehensively a software is verified.
+
+2. Software must meet all the essential quality characterstics:
+-correctness
+-reliability
+-effectiveness
+-security
+-maintainablity
